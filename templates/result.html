@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result - Password Strength Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Strength Score: {{ score }}/100</h1>
+        {% if tips %}
+            <h3>Suggestions:</h3>
+            <ul>
+                {% for tip in tips %}
+                    <li>{{ tip }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Your password is strong! 🎉</p>
+        {% endif %}
+        <a href="/">Check another password</a>
+    </div>
+</body>
+</html>
